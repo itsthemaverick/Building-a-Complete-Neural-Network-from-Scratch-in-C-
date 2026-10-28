@@ -7,7 +7,11 @@ int main(){
     float x1 = 1.0f , x2 = 0.5f;
     float w1 = 0.5f , w2 = 0.5f;
 
-    float z = (x1*w1 + x2*w2);
+
+    float b = -0.7f;
+
+
+    float z = (x1*w1 + x2*w2)+b;
     printf("%.2f \n",z);
 
 }
