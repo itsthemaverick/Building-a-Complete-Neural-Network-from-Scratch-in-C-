@@ -11,7 +11,7 @@ static float step(float z){
     return z >= 0.0f?1.0f:0.0f;
 }
 
-static float foward(Perceptron *p,float x0, float x1){
+static float forward(Perceptron *p,float x0, float x1){
     float z = (x0*p->w[0]+x1*p->w[1])+p->b;
     return step(z);
 }
@@ -32,7 +32,7 @@ int main(){
 
         for ( s = 0; s < 4; s++)
         {
-            float y = foward(&p,X[s][0],X[s][1]);
+            float y = forward(&p,X[s][0],X[s][1]);
             float err = T[s]-y;
 
             if (err!=0.0f)
@@ -50,7 +50,7 @@ int main(){
         printf(" epoch : %2d \n errors : %d \n w0 : %.2f \n w1 : %.2f \n b : %.2f",epoch+1,errors,p.w[0],p.w[1],p.b);
 
         if (errors == 0){
-            printf("Converged\n");
+            printf("\nConverged !");
             break;
         }
         
