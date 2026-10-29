@@ -37,10 +37,7 @@ int main()
 
         float y = sigmoid(wo[0] * h0 + wo[1] * h1 + bo);
 
-        printf(" x=(%.0f, %.0f) h0=%.4f"
-               " h1=%.4f y=%.4f t=%.0f\n",
-               X[s][0], X[s][1],
-               h0, h1, y, T[s]);
+        printf(" x=(%.0f, %.0f) h0=%.4f h1=%.4f y=%.4f t=%.0f\n",X[s][0], X[s][1],h0, h1, y, T[s]);
     }
     return 0;
 }
