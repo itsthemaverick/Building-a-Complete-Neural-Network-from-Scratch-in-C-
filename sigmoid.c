@@ -20,6 +20,15 @@ int main()
     for ( s = 0; s < 4; s++)
     {
         float z = (X[s][0]*w0 + X[s][1]*w1)- b;
+        float y = sigmoid(z);
+
+        printf("  %.0f, %.0f  ->  z=%6.3f  sigmoid=%.4f\n",X[s][0],X[s][1],z,y);
+    }
+
+    printf("\nSigmoid derivative at each point:\n");
+    for ( s = 0; s < 4; s++)
+    {
+        float z = (X[s][0]*w0 + X[s][1]*w1)- b;
         float sig = sigmoid(z);
         float dsig = sig*(1.0f - sig);
 
