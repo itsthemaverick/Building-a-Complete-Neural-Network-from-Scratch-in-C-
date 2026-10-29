@@ -13,7 +13,9 @@ int main(){
     float wh0[2] = {20.0f,20.0f};
     float bh0 = -10.0f;
 
-
+    // Weights to Get AND Gate 
+    float wh1[2] = {20.0f,20.0f};
+    float bh1 = -30.0f;
 
     
 }
