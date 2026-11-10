@@ -33,7 +33,7 @@ static float forward( const Net *n, const float x[2],float h[2]){
         float z = n->bo;
         for ( i = 0; i < 2; i++)
         {
-            z += n->wo *h[i];
+            z += n->wo[i] *h[i];
         }
         return sigmiod(z);
         
@@ -51,4 +51,8 @@ int main(){
         .wo = {20,-20},
         .bo = -10
     };
+
+    //
+
+
 }
