@@ -39,3 +39,16 @@ static float forward( const Net *n, const float x[2],float h[2]){
         
     }
 }
+
+
+int main(){
+
+    //
+
+    Net net = {
+        .wh = {{20,20},{20,20}},
+        .bh = {-10,-30},
+        .wo = {20,-20},
+        .bo = -10
+    };
+}
