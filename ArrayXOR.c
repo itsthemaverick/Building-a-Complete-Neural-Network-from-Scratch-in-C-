@@ -59,4 +59,15 @@ int main(){
     float T[2] = {0,1,1,0};
     float h[2];
     int s;
+
+    //
+
+    for ( s = 0; s < 4; s++)
+    {
+        float y = forward(&net,X[s],h);
+        printf("x=(%.0f,%.0f) y = %.4f target=%.0f \n",X[s][0],X[s][1],y,T[s]);
+    }
+    
+    return 0;
+
 }
