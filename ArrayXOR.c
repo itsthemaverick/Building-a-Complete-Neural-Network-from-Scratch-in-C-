@@ -38,6 +38,7 @@ static float forward( const Net *n, const float x[2],float h[2]){
         return sigmiod(z);
         
     }
+
 }
 
 
@@ -54,5 +55,8 @@ int main(){
 
     //
 
-
+    float X[4][2] = {{0,0},{0,1},{1,0},{1,1}};
+    float T[2] = {0,1,1,0};
+    float h[2];
+    int s;
 }
