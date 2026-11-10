@@ -14,4 +14,7 @@ typedef struct {
     float bo;
 }Net;
 
-
+static float forward( const Net *n, const float x[2],const h[2]){
+    int i , j;
+    
+}
