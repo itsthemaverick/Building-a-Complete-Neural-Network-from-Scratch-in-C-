@@ -54,5 +54,19 @@ int main(){
     int s;
 
 
-    
+    for ( s = 0; s < 4; s++)
+    {
+        //
+        float y = forward(&net,X[s],h);
+        //
+        float diff = T[s] - y;
+        //
+        float loss = diff * diff;
+        //
+        total_loss += loss;
+
+        printf("x=(%.0f,%.0f) y=%.4f \n target=%.0f loss=%.6f\n",X[s][0],X[s][1],y,T[s],loss);
+    }
+    printf("average Loss : %.6f\n, total_loss / 4.0f");
+    return 0;
 }
