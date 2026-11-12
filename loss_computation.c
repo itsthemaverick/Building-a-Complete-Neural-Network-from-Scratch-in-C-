@@ -43,4 +43,16 @@ int main(){
         .wo = {20,-20},
         .bo = -10
     };
+
+
+    //
+
+    float X[4][2] = {{0,0},{0,1},{1,0},{0,0}};
+    float T[4] = {0,1,1,0};
+    float h[2];
+    float total_loss = 0.0f;
+    int s;
+
+
+    
 }
