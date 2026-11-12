@@ -10,7 +10,7 @@ typedef struct{
     float wh[2][2];
     float bh[2];
     float wo[2];
-    float b;
+    float bo;
 }Net;
 
 static float forward(const Net *n,const float x[2],float h[2]){
@@ -25,7 +25,14 @@ static float forward(const Net *n,const float x[2],float h[2]){
         }
         h[i] = sigmoid(z);
     }
-    
+    {
+        float z = n->bo;
+        for ( i = 0; i < 2; i++)
+        {
+            z += n->wo[i]*h[i];
+        }
+        return sigmoid(z);
+    }
     
 }
 
