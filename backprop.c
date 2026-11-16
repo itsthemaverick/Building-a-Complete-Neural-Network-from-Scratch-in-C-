@@ -60,3 +60,15 @@ static void backward(Net *n, const float x[2],
         n->bh[i] -= lr * delta_h[i];
     }
 }
+static void init_random(Net *n)
+{
+    int i, j;
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++)
+            n->wh[i][j] =
+                ((float)rand() / RAND_MAX) * 2.0f - 1.0f;
+        n->bh[i] = ((float)rand() / RAND_MAX) * 2.0f - 1.0f;
+        n->wo[i] = ((float)rand() / RAND_MAX) * 2.0f - 1.0f;
+    }
+    n->bo = ((float)rand() / RAND_MAX) * 2.0f - 1.0f;
+}
