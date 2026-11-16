@@ -49,4 +49,14 @@ static void backward(Net *n, const float x[2],
     for (i = 0; i < 2; i++)
         delta_h[i] = delta_out * n->wo[i]
                      * h[i] * (1.0f - h[i]);
+    for (i = 0; i < 2; i++)
+        n->wo[i] -= lr * delta_out * h[i];
+    n->bo -= lr * delta_out;
+
+    /* Update hidden weights and biases */
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++)
+            n->wh[i][j] -= lr * delta_h[i] * x[j];
+        n->bh[i] -= lr * delta_h[i];
+    }
 }
