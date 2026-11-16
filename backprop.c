@@ -35,3 +35,18 @@ static float forward(const Net *n,const float x[2],float h[2]){
     }
     
 }
+static void backward(Net *n, const float x[2],
+                      const float h[2],
+                      float y, float t, float lr)
+{
+    int i, j;
+    float delta_out, delta_h[2];
+
+    /* Output delta: d_loss/dy * dy/dz_out */
+    delta_out = -2.0f * (t - y) * y * (1.0f - y);
+
+    /* Hidden deltas: error flows back through wo */
+    for (i = 0; i < 2; i++)
+        delta_h[i] = delta_out * n->wo[i]
+                     * h[i] * (1.0f - h[i]);
+}
